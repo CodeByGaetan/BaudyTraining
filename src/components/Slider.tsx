@@ -4,8 +4,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 
-import { SectionTitles } from "@/app/data/SectionId"
 import { CarouselApi } from "@/components/ui/carousel"
+import { SectionTitles } from "@/data/SectionId"
 import { ArrowDownIcon } from "@radix-ui/react-icons"
 import { Children, ReactNode, isValidElement, useEffect, useState } from "react"
 import Dot from "./Dot"
@@ -53,7 +53,6 @@ export default function Slider({ children }: { children: ReactNode }) {
     // MANAGE SCROLLING
     let lastScrollTime = 0
     const handleWheel = (event: WheelEvent) => {
-      event.preventDefault()
       const now = Date.now()
       if (now - lastScrollTime > 1000) {
         lastScrollTime = now

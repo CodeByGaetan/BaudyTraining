@@ -1,4 +1,4 @@
-import { EmailRequest } from "./EmailRequest"
+import { EmailRequest } from "../models/EmailRequest"
 
 interface EmailTemplateProps {
   emailReq: EmailRequest

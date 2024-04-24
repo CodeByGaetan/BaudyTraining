@@ -1,9 +1,10 @@
 "use client"
 
+import ContactSection from "@/components/ContactSection"
 import Slider from "@/components/Slider"
 import SliderSection from "@/components/SliderSection"
 import WelcomeSection from "@/components/WelcomeSection"
-import { SectionId } from "./data/SectionId"
+import { SectionId } from "../data/SectionId"
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
         <SliderSection id={SectionId.coaching}>COACHING</SliderSection>
         <SliderSection id={SectionId.dietetic}>DIETETIQUE</SliderSection>
         <SliderSection id={SectionId.prices}>TARIFS</SliderSection>
-        <SliderSection id={SectionId.contact}>CONTACT</SliderSection>
+        <SliderSection id={SectionId.contact}>
+          <ContactSection />
+        </SliderSection>
       </Slider>
     </main>
   )
