@@ -7,5 +7,5 @@ export default function SliderSection({
   id: string
   children: React.ReactNode
 }) {
-  return <div>{children}</div>
+  return <div className="h-full w-full flex md:items-center">{children}</div>
 }

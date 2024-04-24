@@ -31,7 +31,7 @@ export default function WelcomeSection() {
     //     </div>
     //   </div>
     // </section>
-    <section className="relative">
+    <section className="relative w-full">
       <Image
         src="/dynamique-step.jpg"
         alt="Background"

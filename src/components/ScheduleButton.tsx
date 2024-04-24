@@ -5,9 +5,11 @@ export default function ScheduleButton() {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button>Prendre rendez-vous</Button>
+        <Button asChild>
+          <span>Prendre rendez-vous</span>
+        </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-screen-lg h-4/5 md:max-h-[700px] p-0 pt-12">
+      <DialogContent className="max-w-screen-lg h-[90%] md:max-h-[700px] p-0 pt-12">
         <iframe
           src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ38qRfcYE2DeZUk9btg9ToOq8jUxwv1Y3nTmvyfn2Fjm3H6Mux_UNNRfLta0PJqcA-6KhyAwIwk?gv=true"
           width="100%"

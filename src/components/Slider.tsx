@@ -95,7 +95,7 @@ export default function Slider({ children }: { children: ReactNode }) {
     >
       <CarouselContent className="h-svh w-full">
         {Children.map(children, (child, index) => (
-          <CarouselItem className="">{child}</CarouselItem>
+          <CarouselItem className="overflow-y-scroll">{child}</CarouselItem>
         ))}
       </CarouselContent>
       <div className="absolute bottom-4 left-4">
@@ -106,7 +106,7 @@ export default function Slider({ children }: { children: ReactNode }) {
           </Button>
         )}
       </div>
-      <div className="absolute top-1/2 right-6">
+      <div className="absolute bottom-8 right-6">
         <div className="flex flex-col gap-1">
           {sectionIds.map((id, index) => (
             <Dot

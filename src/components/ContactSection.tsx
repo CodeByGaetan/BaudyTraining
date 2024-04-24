@@ -4,6 +4,7 @@ import { LoaderCircleIcon } from "lucide-react"
 import { FormEvent, useState } from "react"
 import ScheduleButton from "./ScheduleButton"
 import { Button } from "./ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
 import { Textarea } from "./ui/textarea"
@@ -56,45 +57,52 @@ export default function ContactSection() {
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-      <div className="flex flex-col">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <Label htmlFor="email">Adresse email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="Email"
-              required
-              autoComplete="off"
-            />
-          </div>
-          <div className="mb-6">
-            <Label htmlFor="subject">Sujet</Label>
-            <Input
-              id="subject"
-              type="text"
-              placeholder="Sujet"
-              required
-              autoComplete="off"
-            />
-          </div>
-          <div className="mb-6">
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              placeholder="Message"
-              required
-              autoComplete="off"
-            />
-          </div>
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading && <LoaderCircleIcon className="mr-2 animate-spin" />}
-            Envoyer
-          </Button>
-        </form>
-      </div>
+      <h1 className="text-5xl font-bold col-span-full text-center">
+        Me contacter
+      </h1>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-xl font-bold">Contactez-moi</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <Label htmlFor="email">Adresse email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Email"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className="mb-6">
+              <Label htmlFor="subject">Sujet</Label>
+              <Input
+                id="subject"
+                type="text"
+                placeholder="Sujet"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className="mb-6">
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                placeholder="Message"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading && <LoaderCircleIcon className="mr-2 animate-spin" />}
+              Envoyer
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
       <div>
-        <h1 className="text-5xl font-bold mb-4">Me contacter</h1>
         <ScheduleButton />
         <p>
           Je suis toujours à l&apos;écoute de nouveaux projets et opportunités,
