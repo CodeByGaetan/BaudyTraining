@@ -38,9 +38,9 @@ export default function WelcomeSection() {
         alt="Background"
         width={2560}
         height={1440}
-        className="absolute w-full h-full object-cover opacity-30"
+        className="absolute w-full h-full object-cover opacity-50"
       />
-      <div className="relative h-svh flex flex-col items-center justify-center gap-4">
+      <div className="relative h-svh flex flex-col items-center justify-center gap-4 pt-28">
         <Image
           src="/logo.svg"
           alt="Welcome"

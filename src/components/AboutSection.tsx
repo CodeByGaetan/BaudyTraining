@@ -1,11 +1,11 @@
 export default function AboutSection() {
   return (
-    <section className="container flex flex-col gap-16 pt-12">
+    <section className="container flex flex-col gap-16 pt-16">
       <h1 className="text-5xl font-bold text-center">À propos</h1>
       <div className="flex max-md:flex-wrap gap-8 ">
         <div className="max-md:hidden w-full h-[400px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/mathys.jpg')] bg-cover bg-center rounded-l-lg" />
         <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/mathys.jpg')] bg-cover bg-center rounded-t-lg" />
-        <div className="text-lg ">
+        <div className="text-lg">
           <h2 className="text-3xl font-bold mb-4">Bonjour 👋</h2>
           <p>
             Je suis Mathys Baudy, coach sportif, préparateur physique et
@@ -31,7 +31,7 @@ export default function AboutSection() {
           </ul>
         </div>
       </div>
-      <div className="flex max-md:flex-wrap gap-12 pb-16">
+      <div className="flex max-md:flex-wrap gap-12  pb-16">
         <div className="text-lg ">
           <h2 className="text-3xl font-bold mb-6">Mon approche 🎯</h2>
           <p>

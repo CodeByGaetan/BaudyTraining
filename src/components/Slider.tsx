@@ -6,7 +6,7 @@ import {
 
 import { CarouselApi } from "@/components/ui/carousel"
 import { SectionTitles } from "@/data/SectionId"
-import { ArrowDownIcon } from "@radix-ui/react-icons"
+import { ArrowBigRightIcon } from "lucide-react"
 import { Children, ReactNode, isValidElement, useEffect, useState } from "react"
 import Dot from "./Dot"
 import { ToggleMode } from "./ToggleMode"
@@ -52,20 +52,20 @@ export default function Slider({ children }: { children: ReactNode }) {
     })
 
     // MANAGE SCROLLING
-    let lastScrollTime = 0
-    const handleWheel = (event: WheelEvent) => {
-      const now = Date.now()
-      if (now - lastScrollTime > 1000) {
-        lastScrollTime = now
-        console.log("Wheel Event", event.deltaY)
-        if (event.deltaY > 0) {
-          api?.scrollNext()
-        } else {
-          api?.scrollPrev()
-        }
-      }
-    }
-    document.addEventListener("wheel", handleWheel)
+    // let lastScrollTime = 0
+    // const handleWheel = (event: WheelEvent) => {
+    //   const now = Date.now()
+    //   if (now - lastScrollTime > 1000) {
+    //     lastScrollTime = now
+    //     console.log("Wheel Event", event.deltaY)
+    //     if (event.deltaY > 0) {
+    //       api?.scrollNext()
+    //     } else {
+    //       api?.scrollPrev()
+    //     }
+    //   }
+    // }
+    // document.addEventListener("wheel", handleWheel)
 
     // MANAGE HASH CHANGE
     scrollToSection(window.location.hash.slice(1))
@@ -81,7 +81,7 @@ export default function Slider({ children }: { children: ReactNode }) {
 
     // CLEANUP
     return () => {
-      document.removeEventListener("wheel", handleWheel)
+      // document.removeEventListener("wheel", handleWheel)
       window.removeEventListener("hashchange", handleHashChange)
     }
 
@@ -90,19 +90,22 @@ export default function Slider({ children }: { children: ReactNode }) {
 
   return (
     <Carousel
-      orientation="vertical"
+      orientation="horizontal"
       setApi={setApi}
       opts={{
-        watchDrag: false,
+        watchDrag: true,
       }}
       // plugins={[WheelGesturesPlugin()]}
     >
-      <CarouselContent className="h-svh w-full">
+      <CarouselContent className="h-svh w-full ">
         {Children.map(children, (child, index) => (
           <CarouselItem className="overflow-y-auto">{child}</CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute bottom-4 left-4">
+      <div className="absolute top-8 right-8">
+        <ToggleMode />
+      </div>
+      {/* <div className="absolute bottom-4 left-4">
         {sectionIds[selected + 1] && (
           <Button variant="outline" onClick={() => api?.scrollNext()}>
             <p>{SectionTitles.get(sectionIds[selected + 1])}</p>
@@ -110,11 +113,27 @@ export default function Slider({ children }: { children: ReactNode }) {
           </Button>
         )}
       </div>
-      <div className="absolute top-8 right-8">
-        <ToggleMode />
-      </div>
       <div className="absolute bottom-8 right-6">
         <div className="flex flex-col gap-1">
+          {sectionIds.map((id, index) => (
+            <Dot
+              key={id}
+              onClick={() => scrollToSection(id)}
+              isActive={api?.selectedScrollSnap() === index}
+            />
+          ))}
+        </div>
+      </div> */}
+      <div className="absolute bottom-4 right-12">
+        {sectionIds[selected + 1] && (
+          <Button variant="outline" onClick={() => api?.scrollNext()}>
+            <p>{SectionTitles.get(sectionIds[selected + 1])}</p>
+            <ArrowBigRightIcon className="ml-2" />
+          </Button>
+        )}
+      </div>
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+        <div className="flex gap-1 border border-input px-3 py-1 bg-background shadow-sm rounded-full">
           {sectionIds.map((id, index) => (
             <Dot
               key={id}

@@ -5,12 +5,12 @@ export default function Dot({
   onClick: () => void
   isActive: boolean
 }) {
-  const colorClass = isActive ? "border-primary" : "border-secondary"
+  const colorClass = isActive ? "bg-primary" : "bg-secondary"
 
   return (
     <button
       onClick={onClick}
-      className={`border-2 rounded-full w-4 h-4 ${colorClass}`}
+      className={`rounded-full w-4 h-4 ${colorClass}`}
     ></button>
   )
 }

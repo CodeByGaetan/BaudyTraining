@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export default function CoachingSection() {
   return (
-    <section className="container flex flex-col gap-16 pt-12">
+    <section className="container flex flex-col gap-16 pt-16">
       <h1 className="text-5xl font-bold text-center">Coachings sportifs</h1>
-      <div className="grid md:grid-cols-[45%,1fr] gap-8">
+      <div className="grid md:grid-cols-[45%,1fr] gap-8 pb-16">
         <div>
-          <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dynamique-step2.jpg')] bg-cover bg-center rounded-l-lg" />
+          <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dynamique-step2.jpg')] bg-cover bg-center rounded-l-xl" />
           <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dynamique-step2.jpg')] bg-cover bg-center rounded-t-lg" />
         </div>
 
