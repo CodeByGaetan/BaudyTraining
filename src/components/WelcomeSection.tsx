@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "./ui/button"
 
 export default function WelcomeSection() {
@@ -63,6 +64,17 @@ export default function WelcomeSection() {
           <Button asChild>
             <a href="#contact">Contact</a>
           </Button>
+        </div>
+        <div className="flex items-center">
+          <p className="mr-2">Ce site a été réalisé par</p>
+          <Link href="https://www.codebygaetan.fr">
+            <Image
+              src="/cbg_dark.png"
+              alt="CodeByGaetan"
+              width={100}
+              height={50}
+            />
+          </Link>
         </div>
       </div>
     </section>

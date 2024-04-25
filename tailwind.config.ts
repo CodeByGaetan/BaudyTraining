@@ -74,6 +74,7 @@ const config = {
       },
       backgroundImage: {
         "dynamique-step": 'url("/dynamique-step.jpg")',
+        mathys: 'url("/mathys.jpg")',
       },
     },
   },

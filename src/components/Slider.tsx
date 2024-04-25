@@ -9,6 +9,7 @@ import { SectionTitles } from "@/data/SectionId"
 import { ArrowDownIcon } from "@radix-ui/react-icons"
 import { Children, ReactNode, isValidElement, useEffect, useState } from "react"
 import Dot from "./Dot"
+import { ToggleMode } from "./ToggleMode"
 import { Button } from "./ui/button"
 
 export default function Slider({ children }: { children: ReactNode }) {
@@ -91,11 +92,14 @@ export default function Slider({ children }: { children: ReactNode }) {
     <Carousel
       orientation="vertical"
       setApi={setApi}
+      opts={{
+        watchDrag: false,
+      }}
       // plugins={[WheelGesturesPlugin()]}
     >
       <CarouselContent className="h-svh w-full">
         {Children.map(children, (child, index) => (
-          <CarouselItem className="overflow-y-scroll">{child}</CarouselItem>
+          <CarouselItem className="overflow-y-auto">{child}</CarouselItem>
         ))}
       </CarouselContent>
       <div className="absolute bottom-4 left-4">
@@ -105,6 +109,9 @@ export default function Slider({ children }: { children: ReactNode }) {
             <ArrowDownIcon className="ml-2" />
           </Button>
         )}
+      </div>
+      <div className="absolute top-8 right-8">
+        <ToggleMode />
       </div>
       <div className="absolute bottom-8 right-6">
         <div className="flex flex-col gap-1">

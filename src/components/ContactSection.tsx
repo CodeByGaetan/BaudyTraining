@@ -1,6 +1,8 @@
 "use client"
 import { EmailRequest } from "@/models/EmailRequest"
 import { LoaderCircleIcon } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 import { FormEvent, useState } from "react"
 import ScheduleButton from "./ScheduleButton"
 import { Button } from "./ui/button"
@@ -9,6 +11,9 @@ import { Input } from "./ui/input"
 import { Label } from "./ui/label"
 import { Textarea } from "./ui/textarea"
 import { useToast } from "./ui/use-toast"
+
+import InstagramIcon from "../../public/instagram.png"
+import LinkedInIcon from "../../public/linkedin.png"
 
 export default function ContactSection() {
   const [loading, setLoading] = useState(false)
@@ -56,13 +61,13 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+    <section className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 p-4">
       <h1 className="text-5xl font-bold col-span-full text-center">
         Me contacter
       </h1>
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl font-bold">Contactez-moi</CardTitle>
+          <CardTitle className="text-xl font-bold">Formulaire</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
@@ -102,39 +107,49 @@ export default function ContactSection() {
           </form>
         </CardContent>
       </Card>
-      <div>
-        <ScheduleButton />
-        <p>
-          Je suis toujours à l&apos;écoute de nouveaux projets et opportunités,
-          et ma boîte de réception reste toujours ouverte. Que vous ayez une
-          question, une idée à partager ou simplement envie de dire bonjour 👋,
-          n&apos;hésitez pas à me contacter en utilisant ce formulaire. Je
-          m&apos;engage à vous répondre dans les plus brefs délais. 📫
-          <br />
-          Pour en savoir plus sur mes formations et mes expériences, consultez
-          mon compte LinkedIn. Vous pouvez également retrouver le code de mes
-          projets sur mon profil GitHub.
-        </p>
-        {/* <div className="flex flex-wrap gap-4 mt-4">
-          <Link href="https://github.com/CodeByGaetan">
-            <Image
-              src={GitHubIcon}
-              alt="Github Icon"
-              width={40}
-              height={40}
-              className="dark:invert"
-            />
-          </Link>
-          <Link href="https://www.linkedin.com/in/laselvegaetan">
-            <Image
-              src={LinkedInIcon}
-              alt="Linkedin Icon"
-              width={40}
-              height={40}
-              className="dark:invert"
-            />
-          </Link>
-        </div> */}
+      <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-2 items-center">
+          <div>
+            <h2 className="text-2xl ">Mathys Baudy</h2>
+            <p className="text-lg">07 81 07 11 16</p>
+            <p className="text-lg">baudytraining@gmail.com</p>
+          </div>
+          <div className="justify-self-end flex gap-4">
+            <Link href="https://www.instagram.com/baudy_training">
+              <Image
+                src={InstagramIcon}
+                alt="Instagram Icon"
+                width={40}
+                height={40}
+              />
+            </Link>
+            <Link href="https://fr.linkedin.com/in/mathys-baudy-425b9a18b">
+              <Image
+                src={LinkedInIcon}
+                alt="Linkedin Icon"
+                width={40}
+                height={40}
+              />
+            </Link>
+          </div>
+        </div>
+
+        <div className="">
+          <ScheduleButton />
+          {/* <p className="mt-1 ml-2 text-md">
+            Lieu de rendez-vous:
+            <br />
+            47 Rue Desaix
+            <br />
+            69003 Lyon
+          </p> */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.672566716417!2d4.854513413154141!3d45.75770987095956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb1c46ce64f3%3A0x44b494cf88f654f4!2sDynamique%20Step!5e0!3m2!1sfr!2sfr!4v1714027590166!5m2!1sfr!2sfr"
+            loading="lazy"
+            // referrerpolicy="no-referrer-when-downgrade"
+            className="mt-2 w-full h-80 border rounded-xl"
+          ></iframe>
+        </div>
       </div>
     </section>
   )

@@ -6,7 +6,7 @@ export default function ScheduleButton() {
     <Dialog>
       <DialogTrigger>
         <Button asChild>
-          <span>Prendre rendez-vous</span>
+          <span>Réserver une séance !</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-screen-lg h-[90%] md:max-h-[700px] p-0 pt-12">
