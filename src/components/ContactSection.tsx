@@ -15,7 +15,7 @@ import { useToast } from "./ui/use-toast"
 import InstagramIcon from "../../public/instagram.png"
 import LinkedInIcon from "../../public/linkedin.png"
 
-export default function ContactSection() {
+export default function ContactSection({ id }: { id: string }) {
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
@@ -107,7 +107,7 @@ export default function ContactSection() {
           </form>
         </CardContent>
       </Card>
-      <div className="flex flex-col gap-6 pb-16">
+      <div className="flex flex-col gap-6 max-md:pb-16">
         <div className="grid grid-cols-2 items-center">
           <div>
             <h2 className="text-2xl ">Mathys Baudy</h2>

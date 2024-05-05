@@ -6,7 +6,6 @@ import ContactSection from "@/components/ContactSection"
 import DieteticSection from "@/components/DieteticSection"
 import PricesSection from "@/components/PricesSection"
 import Slider from "@/components/Slider"
-import SliderSection from "@/components/SliderSection"
 import WelcomeSection from "@/components/WelcomeSection"
 import { SectionId } from "../data/SectionId"
 
@@ -14,24 +13,12 @@ export default function Home() {
   return (
     <main>
       <Slider>
-        <SliderSection id={SectionId.welcome}>
-          <WelcomeSection />
-        </SliderSection>
-        <SliderSection id={SectionId.about}>
-          <AboutSection />
-        </SliderSection>
-        <SliderSection id={SectionId.coaching}>
-          <CoachingSection />
-        </SliderSection>
-        <SliderSection id={SectionId.dietetic}>
-          <DieteticSection />
-        </SliderSection>
-        <SliderSection id={SectionId.prices}>
-          <PricesSection />
-        </SliderSection>
-        <SliderSection id={SectionId.contact}>
-          <ContactSection />
-        </SliderSection>
+        <WelcomeSection id={SectionId.welcome} />
+        <AboutSection id={SectionId.about} />
+        <CoachingSection id={SectionId.coaching} />
+        <DieteticSection id={SectionId.dietetic} />
+        <PricesSection id={SectionId.prices} />
+        <ContactSection id={SectionId.contact} />
       </Slider>
     </main>
   )

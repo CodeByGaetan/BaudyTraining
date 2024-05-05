@@ -11,6 +11,6 @@ export const SectionTitles: Map<string, string> = new Map([
   [SectionId.about, "À propos"],
   [SectionId.coaching, "Coaching sportif"],
   [SectionId.dietetic, "Suivi diététique"],
-  [SectionId.prices, "Tarifs"],
+  [SectionId.prices, "Prix / Avis"],
   [SectionId.contact, "Contact"],
 ])

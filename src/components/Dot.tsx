@@ -5,12 +5,18 @@ export default function Dot({
   onClick: () => void
   isActive: boolean
 }) {
-  const colorClass = isActive ? "bg-primary" : "bg-secondary"
+  const colorClass = isActive ? "" : ""
 
   return (
+    // <button
+    //   onClick={onClick}
+    //   className={`rounded-full w-4 h-4 ${colorClass}`}
+    // ></button>
     <button
       onClick={onClick}
-      className={`rounded-full w-4 h-4 ${colorClass}`}
-    ></button>
+      className={`rounded-full border border-foreground bg-background w-4 h-4 ${colorClass} flex items-center justify-center`}
+    >
+      {isActive && <span className="rounded-full bg-foreground w-3 h-3" />}
+    </button>
   )
 }

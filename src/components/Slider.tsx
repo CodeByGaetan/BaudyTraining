@@ -102,7 +102,7 @@ export default function Slider({ children }: { children: ReactNode }) {
           <CarouselItem className="overflow-y-auto">{child}</CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute top-8 right-8">
+      <div className="absolute top-4 right-4">
         <ToggleMode />
       </div>
       {/* <div className="absolute bottom-4 left-4">
@@ -124,7 +124,7 @@ export default function Slider({ children }: { children: ReactNode }) {
           ))}
         </div>
       </div> */}
-      <div className="absolute bottom-4 right-12">
+      <div className="absolute bottom-4 right-4">
         {sectionIds[selected + 1] && (
           <Button variant="outline" onClick={() => api?.scrollNext()}>
             <p>{SectionTitles.get(sectionIds[selected + 1])}</p>
@@ -133,7 +133,8 @@ export default function Slider({ children }: { children: ReactNode }) {
         )}
       </div>
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-        <div className="flex gap-1 border border-input px-3 py-1 bg-background shadow-sm rounded-full">
+        {/* <div className="flex gap-1 border border-input px-3 py-1 bg-background shadow-sm rounded-full"> */}
+        <div className="flex gap-1.5 ">
           {sectionIds.map((id, index) => (
             <Dot
               key={id}

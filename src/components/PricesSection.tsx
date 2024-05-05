@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 
-export default function PricesSection() {
+export default function PricesSection({ id }: { id: string }) {
   return (
     <section className="container flex flex-col gap-16 pt-16">
       <h1 className="text-5xl font-bold text-center">Prix / Avis</h1>
