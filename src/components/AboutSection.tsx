@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function AboutSection({ id }: { id: string }) {
   return (
     <section className="container flex flex-col gap-16 pt-16">
@@ -42,8 +44,17 @@ export default function AboutSection({ id }: { id: string }) {
             forme physique et de bien-être.
           </p>
         </div>
-        <div className="max-md:hidden w-full h-[350px] bg-[linear-gradient(90deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-r-lg" />
-        <div className="md:hidden w-full h-[350px] bg-[linear-gradient(180deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-b-lg" />
+        {/* <div className="max-md:hidden w-full h-[300px] bg-[linear-gradient(90deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-r-lg" />
+        <div className="md:hidden w-full h-[300px] bg-[linear-gradient(180deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-b-lg" /> */}
+        <div className="relative w-full h-[300px]">
+          <Image
+            src="/basket.jpeg"
+            alt="Basketball"
+            fill
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </div>
       </div>
     </section>
   )

@@ -6,8 +6,15 @@ export default function DieteticSection({ id }: { id: string }) {
       <h1 className="text-5xl font-bold text-center">Suivis diététiques</h1>
       <div className="grid grid-cols-1 md:grid-cols-[45%,1fr] gap-8 pb-16">
         <div>
-          <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-l-xl" />
-          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-t-lg" />
+          {/* <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-l-xl" />
+          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-t-lg" /> */}
+          <Image
+            src="/dietetic.jpg"
+            alt="Dietetic"
+            width={800}
+            height={800}
+            className="rounded-lg"
+          />
         </div>
         <div className="">
           <p className="text-lg">

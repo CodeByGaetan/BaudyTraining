@@ -21,13 +21,13 @@ export default function WelcomeSection({ id }: { id: string }) {
         height={1440}
         className="absolute w-full h-full object-cover opacity-80 dark:opacity-20"
       />
-      <div className="relative h-svh flex flex-col items-center justify-center gap-4 md:gap-12 pt-0">
+      <div className="relative h-svh flex flex-col items-center justify-center gap-4 md:gap-8 pt-0">
         <Image
           src="/logo2.svg"
           alt="Welcome"
-          width={450}
-          height={450}
-          className="max-sm:w-[85%] invert dark:invert-0"
+          width={400}
+          height={400}
+          className="max-sm:w-[85%]"
         />
         <div className="mt-0 flex flex-col w-80 gap-4">
           {links.map((link) => (
