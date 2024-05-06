@@ -61,7 +61,7 @@ export default function ContactSection({ id }: { id: string }) {
   }
 
   return (
-    <section className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-16">
+    <section className="my-auto py-16 container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
       <h1 className="text-5xl font-bold col-span-full text-center">
         Me contacter
       </h1>
@@ -107,7 +107,7 @@ export default function ContactSection({ id }: { id: string }) {
           </form>
         </CardContent>
       </Card>
-      <div className="flex flex-col gap-6 max-md:pb-16">
+      <div className="flex flex-col gap-6">
         <div className="grid grid-cols-2 items-center">
           <div>
             <h2 className="text-2xl ">Mathys Baudy</h2>

@@ -5,7 +5,7 @@ import Basket from "@/basket.jpeg"
 
 export default function AboutSection({ id }: { id: string }) {
   return (
-    <section className="my-auto container flex flex-col gap-16">
+    <section className="my-auto py-16 container flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">À propos</h1>
       <div className="flex max-md:flex-wrap gap-8 ">
         <div className="max-md:hidden w-full h-[350px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/mathys.jpg')] bg-cover bg-center rounded-l-lg" />

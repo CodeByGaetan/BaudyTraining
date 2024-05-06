@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 
 export default function PricesSection({ id }: { id: string }) {
   return (
-    <section className="container flex flex-col gap-16 pt-16">
+    <section className="my-auto py-16 container flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">Prix / Avis</h1>
-      <div className="grid grid-cols-1 md:grid-cols-[45%,1fr] gap-8 pb-16">
+      <div className="grid grid-cols-1 md:grid-cols-[45%,1fr] gap-8">
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
