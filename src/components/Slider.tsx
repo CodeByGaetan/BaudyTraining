@@ -97,12 +97,14 @@ export default function Slider({ children }: { children: ReactNode }) {
       }}
       // plugins={[WheelGesturesPlugin()]}
     >
-      <CarouselContent className="h-svh w-full ">
+      <CarouselContent>
         {Children.map(children, (child, index) => (
-          <CarouselItem className="overflow-y-auto">{child}</CarouselItem>
+          <CarouselItem className="h-svh overflow-y-auto flex">
+            {child}
+          </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-6">
         <ToggleMode />
       </div>
       {/* <div className="absolute bottom-4 left-4">
@@ -124,7 +126,7 @@ export default function Slider({ children }: { children: ReactNode }) {
           ))}
         </div>
       </div> */}
-      <div className="absolute bottom-4 right-4">
+      <div className="absolute bottom-4 right-6">
         {sectionIds[selected + 1] && (
           <Button variant="outline" onClick={() => api?.scrollNext()}>
             <p>{SectionTitles.get(sectionIds[selected + 1])}</p>
