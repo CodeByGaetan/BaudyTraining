@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function CoachingSection({ id }: { id: string }) {
   return (
-    <section className="my-auto py-16 container flex flex-col gap-16">
+    <section className="flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">Coachings sportifs</h1>
       <div className="grid md:grid-cols-[45%,1fr] gap-8">
         <div>

@@ -9,7 +9,6 @@ import { SectionTitles } from "@/data/SectionId"
 import { ArrowBigRightIcon } from "lucide-react"
 import { Children, ReactNode, isValidElement, useEffect, useState } from "react"
 import Dot from "./Dot"
-import { ToggleMode } from "./ToggleMode"
 import { Button } from "./ui/button"
 
 export default function Slider({ children }: { children: ReactNode }) {
@@ -100,13 +99,13 @@ export default function Slider({ children }: { children: ReactNode }) {
       <CarouselContent>
         {Children.map(children, (child, index) => (
           <CarouselItem className="h-svh overflow-y-auto flex">
-            {child}
+            <div className="my-auto py-16 container">{child}</div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute top-4 right-6">
+      {/* <div className="absolute top-4 right-6">
         <ToggleMode />
-      </div>
+      </div> */}
       {/* <div className="absolute bottom-4 left-4">
         {sectionIds[selected + 1] && (
           <Button variant="outline" onClick={() => api?.scrollNext()}>

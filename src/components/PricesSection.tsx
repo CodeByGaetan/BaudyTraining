@@ -1,8 +1,21 @@
+import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 
 export default function PricesSection({ id }: { id: string }) {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "https://static.elfsight.com/platform/platform.js"
+    script.setAttribute("data-use-service-core", "")
+    script.defer = true
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   return (
-    <section className="my-auto py-16 container flex flex-col gap-16">
+    <section className="flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">Prix / Avis</h1>
       <div className="grid grid-cols-1 md:grid-cols-[45%,1fr] gap-8">
         <div className="flex flex-col gap-6">
@@ -49,17 +62,15 @@ export default function PricesSection({ id }: { id: string }) {
           </Card>
         </div>
 
-        <div>
-          <script
+        {/* <script
             src="https://static.elfsight.com/platform/platform.js"
             data-use-service-core
             defer
-          ></script>
-          <div
-            className="elfsight-app-72c45d48-d927-4e5e-8eec-51a80bad58b6"
-            data-elfsight-app-lazy
-          ></div>
-        </div>
+          ></script> */}
+        <div
+          className="elfsight-app-72c45d48-d927-4e5e-8eec-51a80bad58b6"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </section>
   )

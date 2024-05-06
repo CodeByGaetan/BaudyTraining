@@ -61,7 +61,7 @@ export default function ContactSection({ id }: { id: string }) {
   }
 
   return (
-    <section className="my-auto py-16 container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
       <h1 className="text-5xl font-bold col-span-full text-center">
         Me contacter
       </h1>
