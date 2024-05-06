@@ -1,5 +1,5 @@
 import { Toaster } from "@/components/ui/toaster"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { ThemeProvider } from "next-themes"
 import { Inter } from "next/font/google"
 
@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   title: "Baudy Training",
   description:
     "Mathys Baudy, coach sportif et diététicien-nutritionniste à Lyon",
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "hsl(0 0% 100%)" },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: "hsl(222.2 84% 4.9%)",
+    },
+  ],
+  maximumScale: 1,
 }
 
 export default function RootLayout({

@@ -8,8 +8,8 @@ import { CarouselApi } from "@/components/ui/carousel"
 import { SectionTitles } from "@/data/SectionId"
 import { ArrowBigRightIcon } from "lucide-react"
 import { Children, ReactNode, isValidElement, useEffect, useState } from "react"
-import Dot from "./Dot"
-import { Button } from "./ui/button"
+import Dot from "../sub/Dot"
+import { Button } from "../ui/button"
 
 export default function Slider({ children }: { children: ReactNode }) {
   const [api, setApi] = useState<CarouselApi>()

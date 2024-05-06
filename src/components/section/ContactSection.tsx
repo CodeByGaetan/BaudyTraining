@@ -4,18 +4,21 @@ import { LoaderCircleIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { FormEvent, useState } from "react"
-import ScheduleButton from "./ScheduleButton"
-import { Button } from "./ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
-import { Input } from "./ui/input"
-import { Label } from "./ui/label"
-import { Textarea } from "./ui/textarea"
-import { useToast } from "./ui/use-toast"
+import ScheduleButton from "../sub/ScheduleButton"
+import { Button } from "../ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
+import { Input } from "../ui/input"
+import { Label } from "../ui/label"
+import { Textarea } from "../ui/textarea"
+import { useToast } from "../ui/use-toast"
 
-import InstagramIcon from "../../public/instagram.png"
-import LinkedInIcon from "../../public/linkedin.png"
+import { SectionTitles } from "@/data/SectionId"
+import InstagramIcon from "../../../public/brand-imgs/instagram.png"
+import LinkedInIcon from "../../../public/brand-imgs/linkedin.png"
 
 export default function ContactSection({ id }: { id: string }) {
+  const sectionTitle = SectionTitles.get(id)
+
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
@@ -63,7 +66,7 @@ export default function ContactSection({ id }: { id: string }) {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
       <h1 className="text-5xl font-bold col-span-full text-center">
-        Me contacter
+        {sectionTitle}
       </h1>
       <Card>
         <CardHeader>
@@ -118,18 +121,13 @@ export default function ContactSection({ id }: { id: string }) {
             <Link href="https://www.instagram.com/baudy_training">
               <Image
                 src={InstagramIcon}
-                alt="Instagram Icon"
+                alt="Instagram"
                 width={40}
                 height={40}
               />
             </Link>
             <Link href="https://fr.linkedin.com/in/mathys-baudy-425b9a18b">
-              <Image
-                src={LinkedInIcon}
-                alt="Linkedin Icon"
-                width={40}
-                height={40}
-              />
+              <Image src={LinkedInIcon} alt="Linkedin" width={40} height={40} />
             </Link>
           </div>
         </div>

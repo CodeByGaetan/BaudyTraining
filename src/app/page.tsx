@@ -1,12 +1,12 @@
 "use client"
 
-import AboutSection from "@/components/AboutSection"
-import CoachingSection from "@/components/CoachingSection"
-import ContactSection from "@/components/ContactSection"
-import DieteticSection from "@/components/DieteticSection"
-import PricesSection from "@/components/PricesSection"
-import Slider from "@/components/Slider"
-import WelcomeSection from "@/components/WelcomeSection"
+import AboutSection from "@/components/section/AboutSection"
+import CoachingSection from "@/components/section/CoachingSection"
+import ContactSection from "@/components/section/ContactSection"
+import DieteticSection from "@/components/section/DieteticSection"
+import PricesSection from "@/components/section/PricesSection"
+import Slider from "@/components/section/Slider"
+import WelcomeSection from "@/components/section/WelcomeSection"
 import { SectionId } from "../data/SectionId"
 
 export default function Home() {

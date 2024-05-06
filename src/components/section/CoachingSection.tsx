@@ -1,13 +1,18 @@
 import Image from "next/image"
 
+import { SectionTitles } from "@/data/SectionId"
+import Coaching from "../../../public/illustrations/frise-coaching.png"
+
 export default function CoachingSection({ id }: { id: string }) {
+  const sectionTitle = SectionTitles.get(id)
+
   return (
     <section className="flex flex-col gap-16">
-      <h1 className="text-5xl font-bold text-center">Coachings sportifs</h1>
-      <div className="grid md:grid-cols-[45%,1fr] gap-8">
+      <h1 className="text-5xl font-bold text-center">{sectionTitle}</h1>
+      <div className="grid md:grid-cols-[40%,1fr] gap-8">
         <div>
-          <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/coaching.jpg')] bg-cover bg-center rounded-l-xl" />
-          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/coaching.jpg')] bg-cover bg-center rounded-t-lg" />
+          <div className="max-md:hidden w-full h-[500px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/coaching.jpg')] bg-cover bg-center rounded-l-xl" />
+          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/coaching.jpg')] bg-cover bg-center rounded-t-lg" />
         </div>
 
         <div>
@@ -23,14 +28,8 @@ export default function CoachingSection({ id }: { id: string }) {
             d&apos;atteindre les objectifs fixés, tout en tenant compte des
             contraintes physique et psychologique de chacun de mes clients.
           </p>
-          <Image
-            src="/frise-coaching.png"
-            alt="Frise Coaching"
-            width={800}
-            height={400}
-            className="mt-8"
-          />
-          <h2 className="text-2xl font-bold text-primary text-center mt-8">
+          <Image src={Coaching} alt="Frise Coaching" className="my-6" />
+          <h2 className="text-2xl font-bold text-primary text-center">
             La première séance est offerte !
           </h2>
         </div>

@@ -1,7 +1,11 @@
 import { SectionId, SectionTitles } from "@/data/SectionId"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "./ui/button"
+import { Button } from "../ui/button"
+
+import CbgLogo from "../../../public/brand-imgs/cbg_dark.png"
+import DynamiqueStep from "../../../public/illustrations/dynamique-step2.jpg"
+import Logo from "../../../public/pwa-imgs/logo2.svg"
 
 export default function WelcomeSection({ id }: { id: string }) {
   const links: SectionId[] = [
@@ -15,18 +19,18 @@ export default function WelcomeSection({ id }: { id: string }) {
   return (
     <section className="flex flex-col items-center justify-center gap-4 sm:gap-8">
       <Image
-        src="/dynamique-step2.jpg"
-        alt="Background"
+        src={DynamiqueStep}
+        alt="Photo salle de sport"
         width={2560}
         height={1440}
         className="absolute w-full h-full top-0 left-0 object-cover opacity-80 dark:opacity-20 -z-10"
       />
       <Image
-        src="/logo2.svg"
-        alt="Welcome"
+        src={Logo}
+        alt="Baudy Training"
         width={400}
-        height={400}
         className="max-sm:w-[90%]"
+        priority
       />
       <div className="mt-0 flex flex-col w-60 sm:w-80 gap-4">
         {links.map((link) => (
@@ -38,12 +42,7 @@ export default function WelcomeSection({ id }: { id: string }) {
       <div className="flex items-center">
         <p>Site web réalisé par </p>
         <Link href="https://www.codebygaetan.fr">
-          <Image
-            src="/cbg_dark.png"
-            alt="CodeByGaetan"
-            width={100}
-            height={50}
-          />
+          <Image src={CbgLogo} alt="CodeByGaetan" height={50} priority />
         </Link>
       </div>
     </section>

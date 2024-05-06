@@ -1,15 +1,17 @@
 import Image from "next/image"
 
-// import Basket from "../../public/basket.jpeg"
-import Basket from "@/basket.jpeg"
+import { SectionTitles } from "@/data/SectionId"
+import Basket from "../../../public/illustrations/basket.jpeg"
 
 export default function AboutSection({ id }: { id: string }) {
+  const sectionTitle = SectionTitles.get(id)
+
   return (
     <section className="flex flex-col gap-16">
-      <h1 className="text-5xl font-bold text-center">À propos</h1>
+      <h1 className="text-5xl font-bold text-center">{sectionTitle}</h1>
       <div className="flex max-md:flex-wrap gap-8 ">
-        <div className="max-md:hidden w-full h-[350px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/mathys.jpg')] bg-cover bg-center rounded-l-lg" />
-        <div className="md:hidden w-full h-[350px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/mathys.jpg')] bg-cover bg-center rounded-t-lg" />
+        <div className="max-md:hidden w-full h-[350px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/mathys.jpg')] bg-cover bg-center rounded-l-lg" />
+        <div className="md:hidden w-full h-[350px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/mathys.jpg')] bg-cover bg-center rounded-t-lg" />
         <div className="text-lg">
           {/* <h2 className="text-3xl font-bold mb-4">Bonjour 👋</h2> */}
           <p>
@@ -49,15 +51,22 @@ export default function AboutSection({ id }: { id: string }) {
         </div>
         {/* <div className="max-md:hidden w-full h-[300px] bg-[linear-gradient(90deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-r-lg" />
         <div className="md:hidden w-full h-[300px] bg-[linear-gradient(180deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-b-lg" /> */}
-        <div className="relative w-full h-[300px]">
+
+        <Image
+          src={Basket}
+          alt="Basketball"
+          className="object-cover w-full h-[300px]"
+        />
+
+        {/* <div className="relative w-full h-[300px]">
           <Image
             src={Basket}
             alt="Basketball"
             fill
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             className="rounded-lg"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   )
