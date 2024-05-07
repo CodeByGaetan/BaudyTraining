@@ -1,7 +1,11 @@
 import Image from "next/image"
 
 import { SectionTitles } from "@/data/SectionId"
-import Coaching from "../../../public/illustrations/frise-coaching.png"
+
+import ImageFade from "../sub/ImageFade"
+
+import Coaching from "../../../public/illustrations/coaching.jpg"
+import CoachingTimeline from "../../../public/illustrations/frise-coaching.png"
 
 export default function CoachingSection({ id }: { id: string }) {
   const sectionTitle = SectionTitles.get(id)
@@ -10,10 +14,20 @@ export default function CoachingSection({ id }: { id: string }) {
     <section className="flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">{sectionTitle}</h1>
       <div className="grid md:grid-cols-[40%,1fr] gap-8">
-        <div>
-          <div className="max-md:hidden w-full h-[500px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/coaching.jpg')] bg-cover bg-center rounded-l-xl" />
-          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/coaching.jpg')] bg-cover bg-center rounded-t-lg" />
-        </div>
+        <ImageFade
+          src={Coaching}
+          alt="Photo Coaching"
+          height={500}
+          angle={90}
+          className="max-md:hidden"
+        />
+        <ImageFade
+          src={Coaching}
+          alt="Photo Coaching"
+          height={500}
+          angle={180}
+          className="md:hidden"
+        />
 
         <div>
           <p className="text-lg">
@@ -28,7 +42,12 @@ export default function CoachingSection({ id }: { id: string }) {
             d&apos;atteindre les objectifs fixés, tout en tenant compte des
             contraintes physique et psychologique de chacun de mes clients.
           </p>
-          <Image src={Coaching} alt="Frise Coaching" className="my-6" />
+          <Image
+            src={CoachingTimeline}
+            alt="Frise Coaching"
+            className="my-6"
+            priority
+          />
           <h2 className="text-2xl font-bold text-primary text-center">
             La première séance est offerte !
           </h2>

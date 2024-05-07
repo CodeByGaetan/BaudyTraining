@@ -8,10 +8,6 @@ export default function Dot({
   const colorClass = isActive ? "" : ""
 
   return (
-    // <button
-    //   onClick={onClick}
-    //   className={`rounded-full w-4 h-4 ${colorClass}`}
-    // ></button>
     <button
       onClick={onClick}
       className={`rounded-full border border-foreground bg-background w-4 h-4 ${colorClass} flex items-center justify-center`}

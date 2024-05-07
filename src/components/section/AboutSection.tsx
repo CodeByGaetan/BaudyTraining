@@ -1,7 +1,9 @@
-import Image from "next/image"
-
 import { SectionTitles } from "@/data/SectionId"
+
+import ImageFade from "../sub/ImageFade"
+
 import Basket from "../../../public/illustrations/basket.jpeg"
+import Mathys from "../../../public/illustrations/mathys.jpg"
 
 export default function AboutSection({ id }: { id: string }) {
   const sectionTitle = SectionTitles.get(id)
@@ -10,10 +12,22 @@ export default function AboutSection({ id }: { id: string }) {
     <section className="flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">{sectionTitle}</h1>
       <div className="flex max-md:flex-wrap gap-8 ">
-        <div className="max-md:hidden w-full h-[350px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/mathys.jpg')] bg-cover bg-center rounded-l-lg" />
-        <div className="md:hidden w-full h-[350px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/illustrations/mathys.jpg')] bg-cover bg-center rounded-t-lg" />
+        <ImageFade
+          src={Mathys}
+          alt="Photo Mathys"
+          height={350}
+          angle={90}
+          className="max-md:hidden"
+        />
+        <ImageFade
+          src={Mathys}
+          alt="Photo Mathys"
+          height={350}
+          angle={180}
+          className="md:hidden"
+        />
+
         <div className="text-lg">
-          {/* <h2 className="text-3xl font-bold mb-4">Bonjour 👋</h2> */}
           <p>
             Je suis Mathys Baudy, coach sportif, préparateur physique et
             diététicien-nutritionniste.
@@ -30,7 +44,6 @@ export default function AboutSection({ id }: { id: string }) {
             plus sain et équilibré, en mettant en œuvre mes compétences en
             coaching et en nutrition.
           </p>
-
           <p className="font-bold mt-5">Diplômes : 🎓</p>
           <ul className="list-disc pl-6">
             <li>Licence STAPS mention entraînement sportif </li>
@@ -40,7 +53,6 @@ export default function AboutSection({ id }: { id: string }) {
       </div>
       <div className="flex max-md:flex-wrap gap-12">
         <div className="text-lg ">
-          {/* <h2 className="text-3xl font-bold mb-6">Mon approche 🎯</h2> */}
           <p>
             Mon approche se base sur un coaching et un suivi diététique
             personnalisé et adaptés au mode de vie et aux contraintes de chacun.
@@ -49,24 +61,28 @@ export default function AboutSection({ id }: { id: string }) {
             forme physique et de bien-être.
           </p>
         </div>
-        {/* <div className="max-md:hidden w-full h-[300px] bg-[linear-gradient(90deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-r-lg" />
-        <div className="md:hidden w-full h-[300px] bg-[linear-gradient(180deg,hsl(var(--background))0%,rgba(0,0,0,0)20%),url('/basket.jpeg')] bg-cover bg-center rounded-b-lg" /> */}
 
-        <Image
+        {/* Without fade image version */}
+        {/* <Image
           src={Basket}
-          alt="Basketball"
-          className="object-cover w-full h-[300px]"
-        />
+          alt="Photo Basketball"
+          className="object-cover w-full h-[300px] rounded-lg"
+        /> */}
 
-        {/* <div className="relative w-full h-[300px]">
-          <Image
-            src={Basket}
-            alt="Basketball"
-            fill
-            style={{ objectFit: "cover" }}
-            className="rounded-lg"
-          />
-        </div> */}
+        <ImageFade
+          src={Basket}
+          alt="Photo Basketball"
+          height={300}
+          angle={270}
+          className="max-md:hidden"
+        />
+        <ImageFade
+          src={Basket}
+          alt="Photo Basketball"
+          height={300}
+          angle={0}
+          className="md:hidden"
+        />
       </div>
     </section>
   )

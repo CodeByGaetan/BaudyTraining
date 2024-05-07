@@ -1,8 +1,10 @@
 import Image from "next/image"
 
 import { SectionTitles } from "@/data/SectionId"
+
 import Dietetic from "../../../public/illustrations/dietetic.jpg"
 import DieteticTimeline from "../../../public/illustrations/frise-dietetic.png"
+import ImageFade from "../sub/ImageFade"
 
 export default function DieteticSection({ id }: { id: string }) {
   const sectionTitle = SectionTitles.get(id)
@@ -11,25 +13,21 @@ export default function DieteticSection({ id }: { id: string }) {
     <section className="flex flex-col gap-16">
       <h1 className="text-5xl font-bold text-center">{sectionTitle}</h1>
       <div className="grid grid-cols-1 md:grid-cols-[40%,1fr] gap-8">
-        {/* <div> */}
-        {/* <div className="max-md:hidden w-full h-[600px] bg-[linear-gradient(90deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-l-xl" />
-          <div className="md:hidden w-full h-[400px] bg-[linear-gradient(180deg,rgba(0,0,0,0)80%,hsl(var(--background))100%),url('/dietetic.jpg')] bg-cover bg-center rounded-t-lg" /> */}
-
-        <Image
+        <ImageFade
           src={Dietetic}
-          alt="Photo diététique"
-          className="object-cover rounded-lg h-[400px] md:h-[500px]"
+          alt="Photo Diététique"
+          height={500}
+          angle={90}
+          className="max-md:hidden"
+        />
+        <ImageFade
+          src={Dietetic}
+          alt="Photo Diététique"
+          height={500}
+          angle={180}
+          className="md:hidden"
         />
 
-        {/* 
-          <div className="relative w-full h-[400px] md:h-[500px]">
-            <Image
-              src={Dietetic}
-              alt="Photo diététique"
-              className="object-cover rounded-lg"
-            />
-          </div> */}
-        {/* </div> */}
         <div>
           <p className="text-lg">
             Mes suivis diététiques sont personnalisés et visent à aider chacun à
@@ -45,6 +43,7 @@ export default function DieteticSection({ id }: { id: string }) {
             src={DieteticTimeline}
             alt="Frise Diététique"
             className="my-6"
+            priority
           />
           <h2 className="text-2xl font-bold text-primary text-center">
             La première séance est offerte !

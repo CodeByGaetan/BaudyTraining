@@ -50,22 +50,6 @@ export default function Slider({ children }: { children: ReactNode }) {
       setHashFromIndex(api.selectedScrollSnap())
     })
 
-    // MANAGE SCROLLING
-    // let lastScrollTime = 0
-    // const handleWheel = (event: WheelEvent) => {
-    //   const now = Date.now()
-    //   if (now - lastScrollTime > 1000) {
-    //     lastScrollTime = now
-    //     console.log("Wheel Event", event.deltaY)
-    //     if (event.deltaY > 0) {
-    //       api?.scrollNext()
-    //     } else {
-    //       api?.scrollPrev()
-    //     }
-    //   }
-    // }
-    // document.addEventListener("wheel", handleWheel)
-
     // MANAGE HASH CHANGE
     scrollToSection(window.location.hash.slice(1))
     const handleHashChange = () => {
@@ -80,7 +64,6 @@ export default function Slider({ children }: { children: ReactNode }) {
 
     // CLEANUP
     return () => {
-      // document.removeEventListener("wheel", handleWheel)
       window.removeEventListener("hashchange", handleHashChange)
     }
 
@@ -94,7 +77,6 @@ export default function Slider({ children }: { children: ReactNode }) {
       opts={{
         watchDrag: true,
       }}
-      // plugins={[WheelGesturesPlugin()]}
     >
       <CarouselContent>
         {Children.map(children, (child, index) => (
@@ -103,28 +85,6 @@ export default function Slider({ children }: { children: ReactNode }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <div className="absolute top-4 right-6">
-        <ToggleMode />
-      </div> */}
-      {/* <div className="absolute bottom-4 left-4">
-        {sectionIds[selected + 1] && (
-          <Button variant="outline" onClick={() => api?.scrollNext()}>
-            <p>{SectionTitles.get(sectionIds[selected + 1])}</p>
-            <ArrowDownIcon className="ml-2" />
-          </Button>
-        )}
-      </div>
-      <div className="absolute bottom-8 right-6">
-        <div className="flex flex-col gap-1">
-          {sectionIds.map((id, index) => (
-            <Dot
-              key={id}
-              onClick={() => scrollToSection(id)}
-              isActive={api?.selectedScrollSnap() === index}
-            />
-          ))}
-        </div>
-      </div> */}
       <div className="absolute bottom-4 right-6">
         {sectionIds[selected + 1] && (
           <Button variant="outline" onClick={() => api?.scrollNext()}>
@@ -134,13 +94,12 @@ export default function Slider({ children }: { children: ReactNode }) {
         )}
       </div>
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-        {/* <div className="flex gap-1 border border-input px-3 py-1 bg-background shadow-sm rounded-full"> */}
         <div className="flex gap-1.5 ">
           {sectionIds.map((id, index) => (
             <Dot
               key={id}
               onClick={() => scrollToSection(id)}
-              isActive={api?.selectedScrollSnap() === index}
+              isActive={selected === index}
             />
           ))}
         </div>

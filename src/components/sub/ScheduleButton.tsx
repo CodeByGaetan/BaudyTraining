@@ -9,9 +9,9 @@ export default function ScheduleButton() {
           <span>Réserver une séance !</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-screen-lg h-[90%] md:max-h-[700px] p-0 pt-12">
+      <DialogContent className="max-w-screen-lg h-[90%] md:max-h-[800px] p-0 pt-12 overflow-hidden">
         <iframe
-          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ38qRfcYE2DeZUk9btg9ToOq8jUxwv1Y3nTmvyfn2Fjm3H6Mux_UNNRfLta0PJqcA-6KhyAwIwk?gv=true"
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kbXq5LyQS6TdCKEtAgVrlhOPiaQoUbn1vBxU9PFXoVmNnKBZjAkv43c7oV1Tggx1y26nzrKzl"
           width="100%"
           height="100%"
           className="border-t outline-none"

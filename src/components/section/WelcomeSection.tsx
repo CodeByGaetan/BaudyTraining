@@ -4,8 +4,8 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 
 import CbgLogo from "../../../public/brand-imgs/cbg_dark.png"
-import DynamiqueStep from "../../../public/illustrations/dynamique-step2.jpg"
-import Logo from "../../../public/pwa-imgs/logo2.svg"
+import DynamiqueStep from "../../../public/illustrations/dynamique-step.jpg"
+import Logo from "../../../public/pwa-imgs/logo.svg"
 
 export default function WelcomeSection({ id }: { id: string }) {
   const links: SectionId[] = [
@@ -24,6 +24,7 @@ export default function WelcomeSection({ id }: { id: string }) {
         width={2560}
         height={1440}
         className="absolute w-full h-full top-0 left-0 object-cover opacity-80 dark:opacity-20 -z-10"
+        placeholder="blur"
       />
       <Image
         src={Logo}
@@ -45,6 +46,9 @@ export default function WelcomeSection({ id }: { id: string }) {
           <Image src={CbgLogo} alt="CodeByGaetan" height={50} priority />
         </Link>
       </div>
+      <p className="text-xs text-slate-400 absolute bottom-2 left-2">
+        Tous droits réservés
+      </p>
     </section>
   )
 }
