@@ -64,14 +64,8 @@ export default function PricesSection({ id }: { id: string }) {
             </CardContent>
           </Card>
         </div>
-
-        {/* <script
-            src="https://static.elfsight.com/platform/platform.js"
-            data-use-service-core
-            defer
-          ></script> */}
         <div
-          className="elfsight-app-72c45d48-d927-4e5e-8eec-51a80bad58b6"
+          className="elfsight-app-6d8e18cb-9f33-47d0-8195-d5c2b2c1bcbb"
           data-elfsight-app-lazy
         ></div>
       </div>
