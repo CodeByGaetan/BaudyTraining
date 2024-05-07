@@ -46,7 +46,7 @@ export default function WelcomeSection({ id }: { id: string }) {
           <Image src={CbgLogo} alt="CodeByGaetan" height={50} priority />
         </Link>
       </div>
-      <p className="text-xs text-slate-400 absolute bottom-2 left-2">
+      <p className="text-xs text-slate-500 absolute bottom-2 left-2">
         Tous droits réservés
       </p>
     </section>
