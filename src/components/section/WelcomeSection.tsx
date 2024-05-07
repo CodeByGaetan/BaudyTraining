@@ -18,6 +18,7 @@ export default function WelcomeSection({ id }: { id: string }) {
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 sm:gap-8">
+      <h1>TEST 1</h1>
       <Image
         src={DynamiqueStep}
         alt="Photo salle de sport"
@@ -40,7 +41,7 @@ export default function WelcomeSection({ id }: { id: string }) {
         ))}
       </div>
       <div className="flex items-center">
-        <p>Site web réalisé par </p>
+        <p className="mr-1">Site web réalisé par</p>
         <Link href="https://www.codebygaetan.fr">
           <Image src={CbgLogo} alt="CodeByGaetan" height={50} priority />
         </Link>
