@@ -1,4 +1,4 @@
-import { SectionTitles } from "@/data/SectionId"
+import { SectionId, SectionTitles } from "@/data/SectionId"
 import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 
@@ -25,7 +25,7 @@ export default function PricesSection({ id }: { id: string }) {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-center">
-                Coaching sportif
+                {SectionTitles.get(SectionId.coaching)}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg">
@@ -40,7 +40,7 @@ export default function PricesSection({ id }: { id: string }) {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-center">
-                Suivis diététiques
+                {SectionTitles.get(SectionId.dietetic)}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg">
@@ -51,7 +51,7 @@ export default function PricesSection({ id }: { id: string }) {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-center">
-                Coaching + Diététiques
+                Coaching + Diététique
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg">
