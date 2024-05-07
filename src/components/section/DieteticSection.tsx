@@ -45,9 +45,6 @@ export default function DieteticSection({ id }: { id: string }) {
             className="my-6"
             priority
           />
-          <h2 className="text-2xl font-bold text-primary text-center">
-            La première séance est offerte !
-          </h2>
         </div>
       </div>
     </section>
