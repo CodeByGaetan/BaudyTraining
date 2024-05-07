@@ -18,7 +18,7 @@ export default function WelcomeSection({ id }: { id: string }) {
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 sm:gap-8">
-      <h1>TEST 1</h1>
+      <h1>TEST 2</h1>
       <Image
         src={DynamiqueStep}
         alt="Photo salle de sport"
