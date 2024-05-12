@@ -54,11 +54,11 @@ export default function AboutSection({ id }: { id: string }) {
       <div className="flex max-md:flex-wrap gap-12">
         <div className="text-lg ">
           <p>
-            Mon approche se base sur un coaching et un suivi diététique
-            personnalisé et adaptés au mode de vie et aux contraintes de chacun.
-            Je m&apos;engage à transmettre mes connaissances et mon expérience
-            pour aider mes clients à atteindre leurs objectifs de santé, de
-            forme physique et de bien-être.
+            Mon approche se base sur un coaching et un suivi diététique,
+            personnalisés et adaptés au mode de vie et aux contraintes de
+            chacun. Je m&apos;engage à transmettre mes connaissances et mon
+            expérience pour aider mes clients à atteindre leurs objectifs de
+            santé, de forme physique et de bien-être.
           </p>
         </div>
 

@@ -6,6 +6,7 @@ import ImageFade from "../sub/ImageFade"
 
 import Coaching from "../../../public/illustrations/coaching.jpg"
 import CoachingTimeline from "../../../public/illustrations/frise-coaching.png"
+import ScheduleButton from "../sub/ScheduleButton"
 
 export default function CoachingSection({ id }: { id: string }) {
   const sectionTitle = SectionTitles.get(id)
@@ -29,7 +30,7 @@ export default function CoachingSection({ id }: { id: string }) {
           className="md:hidden"
         />
 
-        <div>
+        <div className="flex flex-col items-center">
           <p className="text-lg">
             En tant que coach sportif, mon accompagnement est entièrement
             personnalisé pour répondre aux besoins individuels de chaque client.
@@ -40,7 +41,7 @@ export default function CoachingSection({ id }: { id: string }) {
             <br />
             Mon objectif est d&apos;optimiser les performances et
             d&apos;atteindre les objectifs fixés, tout en tenant compte des
-            contraintes physique et psychologique de chacun de mes clients.
+            contraintes physiques et psychologiques de chacun de mes clients.
           </p>
           <Image
             src={CoachingTimeline}
@@ -48,9 +49,11 @@ export default function CoachingSection({ id }: { id: string }) {
             className="my-6"
             priority
           />
-          <h2 className="text-2xl font-bold text-primary text-center">
-            La première séance est offerte !
-          </h2>
+          <ScheduleButton>
+            <h2 className="text-2xl font-bold text-primary text-center">
+              La première séance est offerte !
+            </h2>
+          </ScheduleButton>
         </div>
       </div>
     </section>

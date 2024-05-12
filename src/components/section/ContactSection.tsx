@@ -132,7 +132,11 @@ export default function ContactSection({ id }: { id: string }) {
           </div>
         </div>
         <div>
-          <ScheduleButton />
+          <ScheduleButton>
+            <Button asChild>
+              <span>Réserver une séance !</span>
+            </Button>
+          </ScheduleButton>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.672566716417!2d4.854513413154141!3d45.75770987095956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb1c46ce64f3%3A0x44b494cf88f654f4!2sDynamique%20Step!5e0!3m2!1sfr!2sfr!4v1714027590166!5m2!1sfr!2sfr"
             loading="lazy"
