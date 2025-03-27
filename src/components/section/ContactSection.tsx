@@ -115,7 +115,7 @@ export default function ContactSection({ id }: { id: string }) {
           <div>
             <h2 className="text-2xl ">Mathys Baudy</h2>
             <p className="text-lg">07 81 07 11 16</p>
-            <p className="text-lg">baudytraining@gmail.com</p>
+            <p className="text-lg">baudymathys12@gmail.com</p>
           </div>
           <div className="justify-self-end flex gap-4">
             <Link href="https://www.instagram.com/baudy_training">

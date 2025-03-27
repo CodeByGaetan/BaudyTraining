@@ -29,11 +29,11 @@ export default function PricesSection({ id }: { id: string }) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg">
-              <p>Sans engagement : 50€/h</p>
+              <p>Sans engagement : 60€/h</p>
               <p className="mt-2">Avec engagement :</p>
               <ul className="list-disc pl-6">
-                <li>3 mois : 45€/h</li>
-                <li>{">"} 6 mois : 40€/h</li>
+                <li>3 mois : 55€/h</li>
+                <li>{">"} 6 mois : 50€/h</li>
               </ul>
             </CardContent>
           </Card>
