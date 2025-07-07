@@ -45,7 +45,7 @@ export default function PricesSection({ id }: { id: string }) {
             </CardHeader>
             <CardContent className="text-lg">
               <p>Premier bilan {"(1h)"}: 60€</p>
-              <p>Suivis nutritionnels {"(45 min)"}: 40€</p>
+              <p>Suivis nutritionnels {"(45 min)"}: 50€</p>
             </CardContent>
           </Card>
           <Card>
